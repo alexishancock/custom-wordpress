@@ -64,4 +64,3 @@ if( get_role('author') ){
 if( get_role('editor') ){
       remove_role( 'editor' );
 }
-

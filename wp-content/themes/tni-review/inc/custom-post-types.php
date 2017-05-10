@@ -27,7 +27,7 @@ function tni_custom_post_type_jobs() {
 	);
 	$args = array(
 		'labels'             => $labels,
-        'description'        => __( 'Client Work Review', 'tnireview' ),
+    'description'        => __( 'Client Work Review', 'tnireview' ),
 		'public'             => true,
 		'publicly_queryable' => true,
 		'show_ui'            => true,

@@ -112,7 +112,7 @@ function tni_review_scripts() {
 		wp_enqueue_script( 'material-jquery', 'https://code.jquery.com/jquery-3.1.1.min.js', array(), '1.0', false );
 	}
 	wp_enqueue_style( 'material-style', get_template_directory_uri() . '/css/materialize.css' );
-	wp_enqueue_script( 'material-script', get_template_directory_uri() . '/js/materialize.js', array(), '1.0', false );	
+	wp_enqueue_script( 'material-script', get_template_directory_uri() . '/js/materialize.js', array(), '1.0', false );
 	wp_enqueue_script( 'material-custom', get_template_directory_uri() . '/js/material-custom-scripts.js', array(), '1.0', false );
 
 
@@ -163,3 +163,8 @@ require get_template_directory() . '/inc/custom-roles.php';
  * Load Groups.
  */
 require get_template_directory() . '/inc/custom-groups-management.php';
+
+/**
+ * Load Custom Metaboxes.
+ */
+require get_template_directory() . '/inc/cmb2.php';
