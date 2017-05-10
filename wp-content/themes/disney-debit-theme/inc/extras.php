@@ -24,6 +24,35 @@ function disney_debit_theme_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	// Devices
+	$is_ipad = strpos($_SERVER['HTTP_USER_AGENT'], 'iPad');
+	$is_iphone = strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone');
+
+	// Browsers
+	$is_firefox = strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox');
+	$is_IE = strpos($_SERVER['HTTP_USER_AGENT'], 'Windows NT');
+
+	if( wp_is_mobile() && false === $is_ipad ) {
+		$classes[] = 'is-mobile';
+	}
+
+	// Devices
+	if( $is_ipad ) {
+		$classes[] = 'is-ipad';
+	}
+
+	if( $is_iphone ) {
+		$classes[] = 'is-iphone';
+	}
+
+	if( $is_firefox ) {
+		$classes[] = 'is-firefox';
+	}
+
+	if( $is_IE ) {
+		$classes[] = 'is-ie';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'disney_debit_theme_body_classes' );
