@@ -146,7 +146,7 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+//require get_template_directory() . '/inc/jetpack.php';
 
 /**
  * Customizer additions.
@@ -159,3 +159,5 @@ require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/class-disney-debit-setup.php';
 
 require get_template_directory() . '/inc/custom-post-types.php';
+
+require get_template_directory() . '/inc/custom-meta-boxes/offers.php';
