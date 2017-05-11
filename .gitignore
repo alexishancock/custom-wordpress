@@ -1,5 +1,8 @@
+#Wordpress
 .htaccess
 wp-config.php
+wordpress/wp-content/themes/disney-debit-theme/node_modules
+wordpress/wp-content/uploads/
 
 # ignore everything in the root except the "wp-content" directory.
 /*
