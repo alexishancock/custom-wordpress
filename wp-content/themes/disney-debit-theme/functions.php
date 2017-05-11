@@ -118,7 +118,7 @@ function disney_debit_theme_scripts() {
 	wp_enqueue_script( 'disney-debit-theme-js', get_template_directory_uri() . '/js/debit-scripts.min.js', array( 'jquery' ), '1.0.0', true );
 }
 
-function disney_debit_library_scripts() {
+function disney_debit_library_scripts_styles() {
 	#Bootstrap
 	wp_enqueue_script( 'disney-debit-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array(), '', true);
 
@@ -126,7 +126,7 @@ function disney_debit_library_scripts() {
 	wp_enqueue_script( 'disney-debit-ally', 'https://cdnjs.cloudflare.com/ajax/libs/ally.js/1.4.1/ally.min.js', array(), '', true);
 
 	#Animations
-	wp_enqueue_script( 'disney-debit-animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', array(), '', true);
+	wp_enqueue_style( 'disney-debit-animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
 }
 
 add_action( 'wp_enqueue_scripts', 'disney_debit_theme_scripts' );
