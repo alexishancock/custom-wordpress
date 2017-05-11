@@ -13,7 +13,6 @@ var sass   = require('gulp-sass'),
 cleanCSS   = require('gulp-clean-css'),
 sourcemaps = require('gulp-sourcemaps'),
 concat     = require('gulp-concat'),
-cleanCSS   = require('gulp-clean-css'),
 watch      = require('gulp-watch'),
 rename     = require('gulp-rename'),
 uglify     = require('gulp-uglify'),
@@ -56,14 +55,14 @@ gulp.task('minify-css', ['sass'], function() {
 //   Task: build-js
 // -------------------------------------
 gulp.task('build-js', function() {
-	var debitScripts = gulp.src(['js/*.js'])
+	var debitScripts = gulp.src(['js/src/*.js'])
 		.pipe(sourcemaps.init({loadMaps: true}))
 		.pipe(concat('debit-scripts.js'))
-		.pipe(gulp.dest(''))
+		.pipe(gulp.dest('js'))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(uglify())
 		.pipe(sourcemaps.write('/'))
-		.pipe(gulp.dest(''))
+		.pipe(gulp.dest('js'))
 		.pipe(notify({ message: 'Scripts task complete' }));
 	return debitScripts;
 });
@@ -72,6 +71,6 @@ gulp.task('build-js', function() {
 //   Task: watch
 // -------------------------------------
 gulp.task('watch', function() {
-	gulp.watch('js/*.js', ['build:js']);
+	gulp.watch('js/src/*.js', ['build-js']);
 	gulp.watch('sass/**/*.scss', ['minify-css']);
 });

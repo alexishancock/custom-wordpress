@@ -5,6 +5,6 @@
 ( function( $ ) {
 	'use strict';
 
-	console.log('TEST');
+	console.log('TEST AGAIN');
 
 } )( jQuery );
