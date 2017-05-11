@@ -15,7 +15,8 @@ class DisneyDebitSetUp
 	 *
 	 * @return void
 	 */
-	static function get_instance() {
+	static function get_instance()
+	{
 		static $instance = array();
 
 		if (!$instance) {

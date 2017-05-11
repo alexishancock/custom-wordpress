@@ -5,42 +5,6 @@
  * @package Disney_Debit
  */
 
-function register_card_post_type() {
-	$labels = array(
-		'name'               => 'Cards',
-		'singular_name'      => 'Card',
-		'add_new'            => 'Add New',
-		'add_new_item'       => 'Add New Card',
-		'edit_item'          => 'Edit Card',
-		'new_item'           => 'New Card',
-		'view_item'          => 'View Card',
-		'search_items'       => 'Search Cards',
-		'not_found'          =>  'No Cards found',
-		'not_found_in_trash' => 'No Cards found in trash',
-		'parent_item_colon'  => '',
-		'menu_name'          => 'Cards'
-	);
-
-	$args = array(
-		'labels'             => $labels,
-		'public'             => false,
-		'publicly_queryable' => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'query_var'          => true,
-		'capability_type'    => 'post',
-		'has_archive'        => false,
-		'hierarchical'       => false,
-		'menu_position'      => null,
-		'menu_icon'          => 'dashicons-id',
-		'show_in_rest'       => true,
-		'supports'           => array('title','thumbnail')
-	);
-
-	register_post_type( 'card', $args );
-}
-add_action( 'init', 'register_card_post_type' );
-
 /**
  * Create Offer post type
  *

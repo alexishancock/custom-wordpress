@@ -23,4 +23,4 @@ add_action( 'customize_register', 'disney_debit_theme_customize_register' );
 function disney_debit_theme_customize_preview_js() {
 	wp_enqueue_script( 'disney_debit_theme_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'disney_debit_theme_customize_preview_js' );
+// add_action( 'customize_preview_init', 'disney_debit_theme_customize_preview_js' );

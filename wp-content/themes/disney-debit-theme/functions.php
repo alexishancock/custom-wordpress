@@ -107,22 +107,25 @@ add_action( 'widgets_init', 'disney_debit_theme_widgets_init' );
 function disney_debit_theme_scripts() {
 	wp_enqueue_style( 'disney-debit-theme-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'disney-debit-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'disney-debit-theme-navigation', get_template_directory_uri() . '/js/libs/navigation.js', array(), 'v1', true );
 
-	wp_enqueue_script( 'disney-debit-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'disney-debit-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/libs/skip-link-focus-fix.js', array(), 'v1', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_script( 'disney-debit-theme-js', get_template_directory_uri() . '/debit-scripts.min.js', array( 'jquery' ), '1.0.0', true );
 }
+
 function disney_debit_library_scripts() {
-	wp_enqueue_script( 'disney-debit-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js');
+	wp_enqueue_script( 'disney-debit-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array(), '', true);
 
 	#Accessibility
-	wp_enqueue_script( 'disney-debit-ally', 'https://cdnjs.cloudflare.com/ajax/libs/ally.js/1.4.1/ally.min.js' );
+	wp_enqueue_script( 'disney-debit-ally', 'https://cdnjs.cloudflare.com/ajax/libs/ally.js/1.4.1/ally.min.js', array(), '', true);
 
 	#Animations
-	wp_enqueue_script( 'disney-debit-animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' );
+	wp_enqueue_script( 'disney-debit-animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', array(), '', true);
 }
 
 add_action( 'wp_enqueue_scripts', 'disney_debit_theme_scripts' );
@@ -158,6 +161,8 @@ require get_template_directory() . '/inc/extras.php';
  */
 require get_template_directory() . '/inc/class-disney-debit-setup.php';
 
+
 require get_template_directory() . '/inc/custom-post-types.php';
 
-require get_template_directory() . '/inc/custom-meta-boxes/offers.php';
+
+require get_template_directory() . '/inc/custom-meta-boxes/custom-meta-boxes-init.php';
