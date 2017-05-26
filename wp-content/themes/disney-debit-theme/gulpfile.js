@@ -17,7 +17,9 @@ watch      = require('gulp-watch'),
 rename     = require('gulp-rename'),
 uglify     = require('gulp-uglify'),
 notify     = require('gulp-notify'),
-sourcemaps = require('gulp-sourcemaps');
+sourcemaps = require('gulp-sourcemaps'),
+svgSprite    = require('gulp-svg-sprite'),    
+plumber      = require('gulp-plumber');     // for gulp-svg-sprite
 
 // -------------------------------------
 //   Task: default
@@ -73,4 +75,31 @@ gulp.task('build-js', function() {
 gulp.task('watch', function() {
 	gulp.watch('js/src/*.js', ['build-js']);
 	gulp.watch('sass/**/*.scss', ['minify-css']);
+});
+
+// -------------------------------------
+//   Task: create SVG sprite
+// -------------------------------------
+
+var baseDir      = 'svg',   // <-- Set to your SVG base directory
+svgGlob      = '*.svg',       // <-- Glob to match your SVG files
+outDir       = 'svg',     // <-- Main output directory
+config       = {
+    "dest": "svg",
+    "mode": {
+        "css": {
+            "render": {
+                "scss": true
+            }
+        },
+        "defs": true,
+        "symbol": true
+    }
+};
+
+gulp.task('svgsprite', function() {
+    return gulp.src(svgGlob, {cwd: baseDir})
+        .pipe(plumber())
+        .pipe(svgSprite(config)).on('error', function(error){ console.log(error); })
+        .pipe(gulp.dest(outDir))
 });
