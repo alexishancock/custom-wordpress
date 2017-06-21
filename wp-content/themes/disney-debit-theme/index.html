@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<link rel="stylesheet" href="style.css">
+
+	<style>
+		.svg-icon-castle {
+			/*width: 50px;*/
+			/*height: auto;*/
+		}
+
+		nav {
+			width: 250px;
+		}
+
+		div.svg-icon-castle {
+			/*background-size: 100% 100%;*/
+			width: 92px;
+			height: 100px;
+			display: block;
+			/*height: 0;*/
+			/*height: 20%;*/
+			/*max-width: 100%; */
+			background-size: 100% 100%;
+			/*height: 200px;*/
+			background-color: blanchedalmond;
+		}
+
+		.svg-icon-castle {
+			fill: red;
+		}
+
+		li div {
+			display: inline-block;
+		}
+
+		.sprite-container{
+		  width: 400px;
+		}
+
+		.sprite{
+		  /* Create a Responsive Square */
+		  width: 100%;
+		  height: 0;
+		  padding-bottom: 100%;
+
+		  /* Set The Sprite as the Background */
+		  /*background-image: url("images/ourimage.png");*/
+		  /*background-position: 0 0;*/
+		  background-size: 200%; 
+		  display: block;
+		}
+	</style>
+</head>
+<body>
+	hi
+
+	<svg class="card-icon" viewBox="0 0 515.8 176.8">
+		<use xlink:href="sass/elements/defs/sprite.defs.svg#icon-castle"></use>
+	</svg>
+
+
+	<svg class="card-icon" style="width: 50%">
+		<use xlink:href="sass/elements/defs/sprite.defs.svg#icon-castle"></use>
+	</svg>
+
+	<svg class="svg-icon-castle">
+		<!-- <use xlink:href="sass/elements/defs/sprite.defs.svg#icon-castle"></use> -->
+	</svg>
+
+	<nav>
+		<li>
+			<div class="svg-icon-castle">
+				
+			</div>test
+		</li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</nav>
+
+	<br> 
+	sprite container test
+	<div class="sprite-container">
+		<div class="sprite svg-icon-castle"></div>
+	</div>
+
+	<div style="width: 100%;">
+	text hello
+		<img class="svg-icon-castle" alt="" style="width: 500px;" />
+	</div>
+
+</body>
+</html>
