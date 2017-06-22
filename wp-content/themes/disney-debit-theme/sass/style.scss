@@ -60,11 +60,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "elements/elements";
 
 /*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-@import "forms/forms";
-
-/*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 @import "navigation/navigation";
@@ -87,7 +82,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-@import "widgets/all-widgets";
+@import "widgets/widgets";
 
 /*--------------------------------------------------------------
 # Infinite scroll

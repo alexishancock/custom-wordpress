@@ -42,10 +42,6 @@ gulp.task('minify-css', ['sass'], function() {
   return gulp.src('style.css')
 	.pipe(sourcemaps.init())
 	.pipe(cleanCSS({compatibility: '*'}))
-	.pipe(cleanCSS({debug: true}, function(details) {
-	    console.log(details.name + ' size : ' + details.stats.originalSize);
-	    console.log(details.name + ' size : ' + details.stats.minifiedSize);
-	}))
 	.pipe(sourcemaps.write('/'))
 	.pipe(gulp.dest(''))
 	.pipe(notify({ message: 'Compiled & Minified CSS complete' }));
