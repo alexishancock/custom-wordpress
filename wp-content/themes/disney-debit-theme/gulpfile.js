@@ -18,7 +18,7 @@ rename     = require('gulp-rename'),
 uglify     = require('gulp-uglify'),
 notify     = require('gulp-notify'),
 sourcemaps = require('gulp-sourcemaps'),
-svgSprite    = require('gulp-svg-sprite'),    
+svgSprite    = require('gulp-svg-sprite'),
 plumber      = require('gulp-plumber');     // for gulp-svg-sprite
 
 // -------------------------------------
@@ -83,17 +83,22 @@ gulp.task('watch', function() {
 
 var baseDir      = 'svg',   // <-- Set to your SVG base directory
 svgGlob      = '*.svg',       // <-- Glob to match your SVG files
-outDir       = 'svg',     // <-- Main output directory
+outDir       = '',     // <-- Main output directory
 config       = {
     "dest": "svg",
     "mode": {
         "css": {
+        	"sprite": "../sprite.css.svg",
             "render": {
-                "scss": true
+                "scss": {
+                	"dest": "../sass/elements/_sprite.scss"
+                }
             }
         },
-        "defs": true,
-        "symbol": true
+        // "defs": {
+        // 	"sprite": "../sprite.defs.svg"
+        // }
+        // "symbol": true
     }
 };
 
