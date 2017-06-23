@@ -26,6 +26,12 @@
  $body-size: 16px;
  $details-size: 12px;
 
+ $font-wt-bold: 700;
+ $font-wt-normal: 400;
+ $font-wt-light: 100;
+
+ $main-font: 'Gotham SSm 2r', 'Gotham SSm A', 'Gotham SSm B', Helvetica, Arial, sans-serif;
+
  @mixin button-cta {
  	background-color: $monster-blue;
  	font-size: $body-size;
@@ -38,18 +44,14 @@
  	//will need smaller font size version too
  }
 
-/* @font-wt-bold: 700;
- @font-wt-normal: 400;
- @font-wt-light: 100;
- @main-font: 'Gotham SSm 2r', 'Gotham SSm A', 'Gotham SSm B', Helvetica, Arial, sans-serif;
-*/
-
 
 // -------------------------------------
 //   General
 // -------------------------------------
 
-
+* {
+	font-family: $main-font;
+}
 
 
 @media screen and (max-width : 1169px) and (min-width : 960px) {
