@@ -2,9 +2,16 @@
  * File analytics.js
  */
 
-( function( $ ) {
-	'use strict';
+// ( function( $ ) {
+// 	'use strict';
 
-	console.log('TEST AGAIN');
+// 	console.log('TEST AGAIN');
 
-} )( jQuery );
+// } )( jQuery );
+
+
+class Person {
+	constructor(name) {
+		this.name = name;
+	}
+}

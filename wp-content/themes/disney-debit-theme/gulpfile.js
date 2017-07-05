@@ -12,6 +12,7 @@ var gulp = require('gulp');
 var sass   = require('gulp-sass'),
 cleanCSS   = require('gulp-clean-css'),
 sourcemaps = require('gulp-sourcemaps'),
+babel      = require("gulp-babel"),
 concat     = require('gulp-concat'),
 watch      = require('gulp-watch'),
 rename     = require('gulp-rename'),
@@ -53,6 +54,9 @@ gulp.task('minify-css', ['sass'], function() {
 gulp.task('build-js', function() {
 	var debitScripts = gulp.src(['js/src/*.js'])
 		.pipe(sourcemaps.init({loadMaps: true}))
+		.pipe(babel({
+			presets: ['env']
+		}))
 		.pipe(concat('debit-scripts.js'))
 		.pipe(gulp.dest('js'))
 		.pipe(rename({ suffix: '.min' }))
